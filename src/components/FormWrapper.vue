@@ -32,7 +32,7 @@ import PasswordInput from "./PasswordInput.vue";
 import ForgetPasswordOrSignUp from "./ForgetPasswordOrSignUp.vue";
 import NewFacebookPage from "./NewFacebookPage.vue";
 import { isEmailValid } from "../utils/emailLogin";
-
+import type { Data } from "../utils/type";
 export default {
   name: "FormWrapper",
   components: {
@@ -42,7 +42,7 @@ export default {
     NewFacebookPage,
     ForgetPasswordOrSignUp,
   },
-  data() {
+  data(): Data {
     return {
       user: {
         email: "",
