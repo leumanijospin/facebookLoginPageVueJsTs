@@ -59,7 +59,7 @@ export default {
       } else if (this.user.email.length === 0) {
         this.emailError = "email required!";
       } else {
-        this.emailError = "please, your email is incorrect";
+        this.emailError = "please, your email is incorrect!";
       }
 
       if (this.user.password === "bonjour") {
