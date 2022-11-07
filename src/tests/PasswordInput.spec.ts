@@ -15,8 +15,6 @@ describe("Password", () => {
 
   it("should render correctly", () => {
     expect(wrapper.exists()).toBe(true);
-    expect(wrapper.find("input").exists()).toBe(true);
-    expect(wrapper.find("div").exists()).toBe(true);
   });
 
   it("should have a design when you have an empty error message", () => {

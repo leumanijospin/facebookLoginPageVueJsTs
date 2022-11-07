@@ -5,8 +5,7 @@ import ForgetPasswordOrSignUp from "../components/ForgetPasswordOrSignUp.vue";
 describe("ForgetPasswordOrSignUp", () => {
   const wrapper = mount(ForgetPasswordOrSignUp);
   it("should render correctly", () => {
-    expect(wrapper.find("a").exists()).toBe(true);
-    expect(wrapper.find("hr").exists()).toBe(true);
+    expect(wrapper.exists()).toBe(true);
   });
 
   it("should have correct name login link", () => {

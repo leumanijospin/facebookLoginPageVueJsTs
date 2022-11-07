@@ -6,9 +6,7 @@ describe("NewFacebookPage", () => {
   const wrapper = mount(NewFacebookPage);
 
   it("should render correctly", () => {
-    expect(wrapper.find("div").exists()).toBe(true);
-    expect(wrapper.find("a").exists()).toBe(true);
-    expect(wrapper.find("p").exists()).toBe(true);
+    expect(wrapper.exists()).toBe(true);
   });
 
   it("should have a link to the top of the current page", () => {

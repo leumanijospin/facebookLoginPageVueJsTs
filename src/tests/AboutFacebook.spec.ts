@@ -6,9 +6,7 @@ describe("AboutFacebook", () => {
   const wrapper = mount(AboutFacebook);
 
   it("should render correctly", () => {
-    expect(wrapper.find("h1").exists()).toBe(true);
-    expect(wrapper.find("h2").exists()).toBe(true);
-    expect(wrapper.find("div").exists()).toBe(true);
+    expect(wrapper.exists()).toBe(true);
   });
 
   it("should display a correct text", () => {
