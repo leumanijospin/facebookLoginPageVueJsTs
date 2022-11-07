@@ -15,16 +15,25 @@ describe("FormWrapper", () => {
   });
 
   it("should contain the ButtonWrapper", () => {
-    expect(wrapper.findComponent(ButtonWrapper).exists()).toBe(true);
+    const buttonWrapper = wrapper.findComponent(ButtonWrapper);
+    expect(buttonWrapper.exists()).toBe(true);
+    expect(buttonWrapper.props().name).toBe("Se connecter");
   });
 
   it("should contain the EmailInput", () => {
     const emailInput = wrapper.findComponent(EmailInput);
     expect(emailInput.exists()).toBe(true);
+    expect(emailInput.props().placeholder).toBe(
+      "Adresse e-mail ou numéro de tél."
+    );
+    expect(emailInput.props().required).toBe(true);
+    expect(emailInput.props().error).toBe("");
   });
 
   it("should contain the PasswordInput", () => {
-    expect(wrapper.findComponent(PasswordInput).exists()).toBe(true);
+    const passwordInput = wrapper.findComponent(PasswordInput);
+    expect(passwordInput.exists()).toBe(true);
+    expect(passwordInput.props().placeholder).toBe("Mot de passe");
   });
 
   it("should contain the ForgetPasswordOrSignUp", () => {
