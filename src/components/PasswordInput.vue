@@ -2,10 +2,10 @@
   <div>
     <input
       :class="[
-        'border border-solid rounded-md text-[17px] text-[#1d2129] h-[52px]  font-[Helvetica] w-full px-3.5',
+        'border border-solid rounded-md text-[17px] border-[#dddfe2] text-[#1d2129] h-[52px]  font-[Helvetica] w-full px-3.5',
         error
           ? 'focus:outline-none border-red-500'
-          : 'focus:outline outline-[#1877f2] border-[#dddfe2] caret-blue-600',
+          : 'focus:outline outline-[#1877f2] caret-blue-600',
       ]"
       type="password"
       :placeholder="placeholder"
@@ -33,7 +33,7 @@ export default {
     },
     error: {
       type: String,
-      required: true,
+      default: "",
     },
   },
   emits: ["update:modelValue"],
