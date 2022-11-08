@@ -15,7 +15,9 @@
       "
       :required="required"
     />
-    <span class="text-red-500 text-xs" v-if="error">{{ error }}</span>
+    <span data-test="emailError" class="text-red-500 text-xs" v-if="error">{{
+      error
+    }}</span>
   </div>
 </template>
 

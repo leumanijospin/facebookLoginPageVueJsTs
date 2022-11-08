@@ -15,7 +15,9 @@
       "
       required
     />
-    <span class="text-red-500 text-xs" v-if="error"> {{ error }}</span>
+    <span data-test="passwordError" class="text-red-500 text-xs" v-if="error">
+      {{ error }}</span
+    >
   </div>
 </template>
 
