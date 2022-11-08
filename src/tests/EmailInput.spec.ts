@@ -17,10 +17,6 @@ describe("EmailInput", () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it("should have a design when you have an empty error message", () => {
-    expect(wrapper.find("input").classes()).toContain("border-[#dddfe2]");
-  });
-
   it("should have a placeholder with correct value", () => {
     expect(wrapper.find("input").attributes().placeholder).toBe(
       "Adresse e-mail ou numéro de tél"
@@ -42,7 +38,8 @@ describe("EmailInput", () => {
     expect(wrapper.find("span").text()).toBe("email required!");
   });
 
-  it("should have design when error prop has value", async () => {
+  it("should have the awaited design when the error prop has value", async () => {
+    expect(wrapper.find("input").classes()).toContain("border-[#dddfe2]");
     await wrapper.setProps({
       error: "email required!",
     });
