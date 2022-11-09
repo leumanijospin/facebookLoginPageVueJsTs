@@ -135,6 +135,21 @@ describe("FormWrapper", () => {
     expect(passwordErrorMessage.exists()).toBe(false);
   });
 
+  it("should display the error message when email is not entered with password is valid", async () => {
+    let emailErrorMessage = wrapper.find("[data-test=emailError]");
+    expect(emailErrorMessage.exists()).toBe(false);
+    let passwordErrorMessage = wrapper.find("[data-test=passwordError]");
+    expect(passwordErrorMessage.exists()).toBe(false);
+    await wrapper.findAll("input")[0].setValue("");
+    await wrapper.findAll("input")[1].setValue("bonjour");
+    await wrapper.find("button").trigger("click");
+    emailErrorMessage = wrapper.find("[data-test=emailError]");
+    passwordErrorMessage = wrapper.find("[data-test=passwordError]");
+    expect(emailErrorMessage.exists()).toBe(true);
+    expect(emailErrorMessage.text()).toBe("email required!");
+    expect(passwordErrorMessage.exists()).toBe(false);
+  });
+
   it("should display the error message when password is invalid with email is valid", async () => {
     let emailErrorMessage = wrapper.find("[data-test=emailError]");
     expect(emailErrorMessage.exists()).toBe(false);
@@ -149,6 +164,22 @@ describe("FormWrapper", () => {
     expect(passwordErrorMessage.exists()).toBe(true);
     expect(passwordErrorMessage.text()).toBe("invalid password");
   });
+
+  it("should display the error message when password is not entered with email is valid", async () => {
+    let emailErrorMessage = wrapper.find("[data-test=emailError]");
+    expect(emailErrorMessage.exists()).toBe(false);
+    let passwordErrorMessage = wrapper.find("[data-test=passwordError]");
+    expect(passwordErrorMessage.exists()).toBe(false);
+    await wrapper.findAll("input")[0].setValue("test@gmail.com");
+    await wrapper.findAll("input")[1].setValue("");
+    await wrapper.find("button").trigger("click");
+    emailErrorMessage = wrapper.find("[data-test=emailError]");
+    passwordErrorMessage = wrapper.find("[data-test=passwordError]");
+    expect(emailErrorMessage.exists()).toBe(false);
+    expect(passwordErrorMessage.exists()).toBe(true);
+    expect(passwordErrorMessage.text()).toBe("password required!");
+  });
+
 
   it("should display an alert message when the user information is correct", async () => {
     window.alert = vi.fn();
