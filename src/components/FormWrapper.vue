@@ -67,7 +67,7 @@ export default {
       } else if (this.user.password.length === 0) {
         this.passwordError = "password required!";
       } else {
-        this.passwordError = "invalid email";
+        this.passwordError = "invalid password";
       }
 
       if (isEmailValid(this.user.email) && this.user.password === "bonjour") {

@@ -15,5 +15,6 @@ describe("AboutFacebook", () => {
     expect(wrapper.find("h2").text()).toEqual(
       "Avec Facebook, partagez et restez en contact avec votre entourage."
     );
+    expect(wrapper.find("h2").classes()).toContain("text-[#1c1e21]");
   });
 });

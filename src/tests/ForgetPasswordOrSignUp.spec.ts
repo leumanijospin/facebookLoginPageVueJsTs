@@ -4,11 +4,11 @@ import ForgetPasswordOrSignUp from "../components/ForgetPasswordOrSignUp.vue";
 
 describe("ForgetPasswordOrSignUp", () => {
   const wrapper = mount(ForgetPasswordOrSignUp);
-  it("should render correctly", () => {
+  it("should be render correctly", () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it("should have correct name login link", () => {
+  it("should have a correct login name", () => {
     expect(wrapper.findAll("a")[0].text()).toBe("Mot de passe oublié ?");
   });
 
@@ -16,7 +16,7 @@ describe("ForgetPasswordOrSignUp", () => {
     expect(wrapper.findAll("a")[1].text()).toBe("Créer nouveau compte");
   });
 
-  it("should have a link to the top of the current page", () => {
+  it("should have a link that does not redirect anywhere", () => {
     expect(wrapper.find("a").attributes().href).toBe("#");
   });
 });

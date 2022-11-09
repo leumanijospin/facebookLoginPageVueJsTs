@@ -24,14 +24,12 @@ describe("EmailInput", () => {
   });
 
   it("should emit when we type value", async () => {
-    await wrapper.find("input").setValue("ninho@gmail.com");
+    await wrapper.find("input").setValue("lao@gmail.com");
     expect(wrapper.emitted()).toHaveProperty("update:modelValue");
-    expect(wrapper.emitted("update:modelValue")[0]).toEqual([
-      "ninho@gmail.com",
-    ]);
+    expect(wrapper.emitted("update:modelValue")[0]).toEqual(["lao@gmail.com"]);
   });
 
-  it("should be correctly display the error message when the error prop has a value", async () => {
+  it("should correctly display the error message when the error has a value", async () => {
     await wrapper.setProps({
       error: "email required!",
     });

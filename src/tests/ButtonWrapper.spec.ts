@@ -13,7 +13,7 @@ describe("ButtonWrapper", () => {
     expect(wrapper.find("button").exists()).toBe(true);
   });
 
-  it("should have awaited name", () => {
+  it("should awaited a correct name", () => {
     expect(wrapper.find("button").text()).toBe("Se connecter");
   });
 });
