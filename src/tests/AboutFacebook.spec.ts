@@ -10,11 +10,7 @@ describe("AboutFacebook", () => {
   });
 
   it("should display a correct text", () => {
-    expect(wrapper.find("h1").text()).toEqual("facebook");
-    expect(wrapper.find("h1").classes()).toContain("text-[#1877f2]");
-    expect(wrapper.find("h2").text()).toEqual(
-      "Avec Facebook, partagez et restez en contact avec votre entourage."
-    );
-    expect(wrapper.find("h2").classes()).toContain("text-[#1c1e21]");
+    expect(wrapper.find("h1").text()).toBe("facebook");
+    expect(wrapper.find("h2").text()).toContain("Avec Facebook, partagez");
   });
 });

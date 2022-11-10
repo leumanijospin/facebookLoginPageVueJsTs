@@ -16,7 +16,7 @@ describe("ForgetPasswordOrSignUp", () => {
     expect(wrapper.findAll("a")[1].text()).toBe("Créer nouveau compte");
   });
 
-  it("should have a link that does not redirect anywhere", () => {
+  it("should have inactived link", () => {
     expect(wrapper.find("a").attributes().href).toBe("#");
   });
 });

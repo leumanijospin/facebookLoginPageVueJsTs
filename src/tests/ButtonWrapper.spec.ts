@@ -10,7 +10,7 @@ describe("ButtonWrapper", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find("button").exists()).toBe(true);
+    expect(wrapper.exists()).toBe(true);
   });
 
   it("should awaited a correct name", () => {

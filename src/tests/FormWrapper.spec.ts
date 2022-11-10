@@ -14,30 +14,29 @@ describe("FormWrapper", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.exists()).toBeTruthy();
+    expect(wrapper.exists()).toBe(true);
   });
 
-  it("should contain the ButtonWrapper", () => {
-    expect(wrapper.findComponent(ButtonWrapper).exists()).toBeTruthy();
-    expect(wrapper.findComponent(ButtonWrapper).props().name).toBe(
-      "Se connecter"
-    );
+  it("should contain the awaited ButtonWrapper", () => {
+    const buttonWrapper = wrapper.findComponent(ButtonWrapper);
+    expect(buttonWrapper.exists()).toBe(true);
+    expect(buttonWrapper.props().name).toBe("Se connecter");
   });
 
-  it("should contain the EmailInput", async () => {
-    expect(wrapper.findComponent(EmailInput).exists()).toBeTruthy();
-    expect(wrapper.findComponent(EmailInput).props().placeholder).toBe(
+  it("should contain the awaited EmailInput", async () => {
+    const emailInput = wrapper.findComponent(EmailInput);
+    expect(emailInput.exists()).toBe(true);
+    expect(emailInput.props().placeholder).toBe(
       "Adresse e-mail ou numéro de tél."
     );
-    expect(wrapper.findComponent(EmailInput).props().required).toBe(true);
-    expect(wrapper.findComponent(EmailInput).props().error).toBe("");
+    expect(emailInput.props().required).toBe(true);
+    expect(emailInput.props().error).toBe("");
   });
 
-  it("should contain the PasswordInput", () => {
-    expect(wrapper.findComponent(PasswordInput).exists()).toBe(true);
-    expect(wrapper.findComponent(PasswordInput).props().placeholder).toBe(
-      "Mot de passe"
-    );
+  it("should contain the awaited PasswordInput", () => {
+    const passwordInput = wrapper.findComponent(PasswordInput);
+    expect(passwordInput.exists()).toBe(true);
+    expect(passwordInput.props().placeholder).toBe("Mot de passe");
   });
 
   it("should contain the ForgetPasswordOrSignUp", () => {
@@ -179,7 +178,6 @@ describe("FormWrapper", () => {
     expect(passwordErrorMessage.exists()).toBe(true);
     expect(passwordErrorMessage.text()).toBe("password required!");
   });
-
 
   it("should display an alert message when the user information is correct", async () => {
     window.alert = vi.fn();

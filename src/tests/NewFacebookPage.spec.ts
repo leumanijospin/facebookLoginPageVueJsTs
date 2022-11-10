@@ -9,7 +9,7 @@ describe("NewFacebookPage", () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it("should have a link to the top of the current page", () => {
+  it("should have inactived link", () => {
     expect(wrapper.find("a").attributes().href).toBe("#");
   });
 
@@ -18,8 +18,8 @@ describe("NewFacebookPage", () => {
   });
 
   it("should have correct text to explain new facebook page link", () => {
-    expect(wrapper.find("p").text()).toBe(
-      "Créer une Page pour une célébrité, une marque ou une entreprise."
+    expect(wrapper.find("p").text()).toContain(
+      "Créer une Page pour une célébrité,"
     );
   });
 });

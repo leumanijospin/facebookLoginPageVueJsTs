@@ -21,13 +21,14 @@ describe("Password", () => {
     expect(wrapper.find("input").attributes().placeholder).toBe("Mot de passe");
   });
 
-  it("should emit when we type value", async () => {
+  it("should emit the awaited event when we type value", async () => {
     await wrapper.find("input").setValue("password");
     expect(wrapper.emitted()).toHaveProperty("update:modelValue");
     expect(wrapper.emitted("update:modelValue")[0]).toEqual(["password"]);
   });
 
-  it("should be correctly display the error message when the error prop has a value", async () => {
+  it("should correctly display the error message when the error prop has a value", async () => {
+    expect(wrapper.find("input").exists).toBe(false);
     await wrapper.setProps({
       error: "password required!",
     });
