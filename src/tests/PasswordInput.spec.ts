@@ -36,7 +36,7 @@ describe("Password", () => {
   });
 
   it("should have the awaited design when the error prop has value", async () => {
-    expect(wrapper.find("input").classes()).toContain("border-[#dddfe2]");
+    expect(wrapper.find("input").classes()).not.toContain("border-red-500");
     await wrapper.setProps({
       error: "password required!",
     });
