@@ -89,9 +89,9 @@ describe("FormWrapper", () => {
 
   it("should display the error message when password and email are not entered", async () => {
     let emailErrorMessage = wrapper.find("[data-test=emailError]");
-    expect(emailErrorMessage.exists()).toBeFalsy();
+    expect(emailErrorMessage.exists()).toBe(false);
     let passwordErrorMessage = wrapper.find("[data-test=passwordError]");
-    expect(passwordErrorMessage.exists()).toBeFalsy();
+    expect(passwordErrorMessage.exists()).toBe(false);
     await wrapper.findAll("input")[0].setValue("");
     await wrapper.findAll("input")[1].setValue("");
     await wrapper.find("button").trigger("click");
