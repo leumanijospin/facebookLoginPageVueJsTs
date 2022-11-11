@@ -40,11 +40,11 @@ describe("FormWrapper", () => {
   });
 
   it("should contain the ForgetPasswordOrSignUp", () => {
-    expect(wrapper.findComponent(ForgetPasswordOrSignUp).exists()).toBeTruthy();
+    expect(wrapper.findComponent(ForgetPasswordOrSignUp).exists()).toBe(true);
   });
 
   it("should contain the NewFacebookPage", () => {
-    expect(wrapper.findComponent(NewFacebookPage).exists()).toBeTruthy();
+    expect(wrapper.findComponent(NewFacebookPage).exists()).toBe(true);
   });
 
   it("should correctly display the error message when email is invalid", async () => {

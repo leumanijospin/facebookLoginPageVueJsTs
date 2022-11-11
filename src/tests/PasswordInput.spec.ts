@@ -28,7 +28,7 @@ describe("Password", () => {
   });
 
   it("should correctly display the error message when the error prop has a value", async () => {
-    expect(wrapper.find("input").exists).toBe(false);
+    expect(wrapper.find("input").text()).not.toBe("password required!");
     await wrapper.setProps({
       error: "password required!",
     });
